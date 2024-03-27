@@ -13,8 +13,8 @@ export const config = {
     authorized({ request, auth }) {
       try {
         const { pathname } = request.nextUrl;
-        if (pathname === "/middleware-example") return !!auth;
-        return true;
+        if (pathname === "/server-example") return !!auth; //ログインしているユーザーだけ見れるページだよ。
+        return true; //ログインしてなくても取りあえず全ページ見れるよ。
       } catch (err) {
         console.log(err);
       }
